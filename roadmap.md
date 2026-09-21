@@ -10,3 +10,5 @@
 - [x] Dùng chung khung ảnh cuối intro và đầu trang để chuyển cảnh liền mạch.
 - [x] Làm lại nhịp xuất hiện chữ mở đầu theo từng câu, mềm và giàu cảm xúc hơn.
 - [x] Đồng nhất tuyệt đối khung cuối intro với khung đầu thiệp để chuyển cảnh liền mạch.
+- [x] Chồng lớp intro và khung đầu bằng cùng một ảnh, vị trí cắt và lớp phủ để loại bỏ chớp/giật.
+- [x] Rút gọn khoảng cách dọc và nhịp xuất hiện nội dung trên điện thoại lẫn máy tính.
