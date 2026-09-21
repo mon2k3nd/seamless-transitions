@@ -172,7 +172,7 @@ function WeddingInvitation() {
       </div>}
 
       {opening && <>
-        <Button type="button" variant="ghost" onClick={() => { setIntroLeaving(true); window.setTimeout(() => setOpened(true), 650); }} className="intro-skip absolute right-4 top-[max(1rem,env(safe-area-inset-top))] z-50 text-primary-foreground/70 hover:text-primary-foreground">Bỏ qua</Button>
+        <Button type="button" variant="ghost" onClick={() => { setIntroLeaving(true); window.setTimeout(() => setOpened(true), 1600); }} className="intro-skip absolute right-4 top-[max(1rem,env(safe-area-inset-top))] z-50 text-primary-foreground/70 hover:text-primary-foreground">Bỏ qua</Button>
         <div className="intro-grain absolute inset-0 z-10" />
         <div className="intro-story absolute inset-0 z-20 flex items-center justify-center px-7">
           <div className="opening-verse w-full max-w-3xl text-center font-display italic" aria-label={introStory.join(" ")}>
