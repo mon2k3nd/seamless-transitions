@@ -184,6 +184,12 @@ function WeddingInvitation() {
             <span aria-hidden className="opening-verse-flourish" />
           </div>
         </div>
+        <div aria-hidden className="intro-handoff-copy absolute inset-0 z-30 mx-auto flex min-h-[100svh] max-w-5xl flex-col items-center justify-end px-5 pb-10 text-center text-primary-foreground">
+          <p className="mb-4 text-[10px] uppercase tracking-[.3em] text-primary-foreground/85">03 · 10 · 2026</p>
+          <p className="font-display text-[3.6rem] leading-[.9] sm:text-8xl">Thảo My<br/><span className="text-secondary">&</span> Xuân Tú</p>
+          <p className="mt-6 font-display text-lg italic leading-[2]">Hai con người,<br/>hai hành trình,<br/>một đích đến.</p>
+          <span className="mt-8 block h-12 w-px opacity-0" />
+        </div>
       </>}
     </div>}
     {controlsReady && <><div className="fixed inset-x-0 top-0 z-40 h-1 bg-border no-print"><div className="h-full bg-primary transition-[width]" style={{ width: `${progress}%` }} /></div>
