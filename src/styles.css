@@ -224,7 +224,6 @@
 @keyframes dotPulse { 0%,100% { opacity: .25; transform: scale(.7); } 50% { opacity: 1; transform: scale(1); } }
 @keyframes auraBloom { 0% { opacity: 0; transform: scale(.4); } 45% { opacity: .85; } 100% { opacity: 0; transform: scale(2.6); } }
 @keyframes scrollHint { 0% { transform: scaleY(0); transform-origin: top; opacity: 0; } 40% { opacity: 1; } 60% { transform: scaleY(1); transform-origin: top; } 100% { transform: scaleY(0); transform-origin: bottom; opacity: 0; } }
-@keyframes introPosterSettle { 0% { transform: scale(1.025); } 100% { transform: scale(1); } }
 @keyframes verseBreatheIn {
   0% { opacity: 0; transform: translate3d(0, 14px, 0); }
   100% { opacity: 1; transform: translate3d(0, 0, 0); }
@@ -232,7 +231,7 @@
 @keyframes verseComplete { 0%,72% { opacity:1; transform:translate3d(0,0,0); } 86%,100% { opacity:0; transform:translate3d(0,-10px,0); } }
 @keyframes flourishOpen { 0% { opacity:0; transform:scaleX(0); } 100% { opacity:.75; transform:scaleX(1); } }
 @keyframes introCurtainAway { 0%,73% { opacity:1; } 88%,100% { opacity:0; } }
-@keyframes introLayerAway { from { opacity: 1; } to { opacity: 0; visibility: hidden; } }
+@keyframes handoffCopyIn { from { opacity: 0; transform: translate3d(0, 24px, 0); } to { opacity: 1; transform: translate3d(0, 0, 0); } }
 @keyframes skipAway { 0%,70% { opacity:1; } 78%,100% { opacity:0; visibility:hidden; } }
 @utility font-display { font-family: var(--font-display); }
 @utility paper-texture {
@@ -242,7 +241,6 @@
 @utility film-shadow { box-shadow: 0 24px 70px color-mix(in oklab, var(--ink) 15%, transparent); }
 @utility cinema-intro {
   isolation: isolate;
-  &.is-playing .intro-poster { animation: introPosterSettle 17s linear both; }
   &.is-playing .opening-verse { animation: verseComplete 17s ease both; }
   &.is-playing .opening-verse-line { animation: verseBreatheIn 1.8s cubic-bezier(.2,.72,.2,1) both; }
   &.is-playing .opening-verse-line:nth-child(1) { animation-delay: .8s; }
@@ -252,14 +250,15 @@
   &.is-playing .opening-verse-flourish { animation: flourishOpen 1.5s 9.75s ease both; }
   &.is-playing .intro-story, &.is-playing .intro-grain { animation: introCurtainAway 17s cubic-bezier(.2,.72,.2,1) both; }
   &.is-playing .intro-skip { animation: skipAway 17s ease both; }
-  &.is-leaving { pointer-events: none; animation: introLayerAway 1.8s cubic-bezier(.22,.72,.22,1) both; }
-  &.is-leaving .intro-shade { opacity: 0; transition: opacity 1.6s cubic-bezier(.22,.72,.22,1); }
+  &.is-leaving { pointer-events: none; }
+  &.is-leaving .intro-story, &.is-leaving .intro-grain, &.is-leaving .intro-skip { opacity: 0; transition: opacity 1.25s cubic-bezier(.22,.72,.22,1); }
+  &.is-leaving .intro-handoff-copy { animation: handoffCopyIn 1.5s cubic-bezier(.22,.72,.22,1) both; }
 }
 
 .story-opening .hero-photo { animation: none; }
 .story-opening .hero-copy { animation: heroCopyEnter 1.8s 15.15s cubic-bezier(.22,.72,.22,1) both; }
-@utility intro-poster { filter: saturate(.78) contrast(1.06); }
-@utility intro-shade { background: linear-gradient(to bottom, color-mix(in oklab, var(--ink) 20%, transparent), transparent 34%, color-mix(in oklab, var(--ink) 92%, transparent)); }
+@utility intro-poster { filter: saturate(.9) contrast(1.02); }
+@utility intro-shade { background: linear-gradient(to bottom, color-mix(in oklab, var(--ink) 18%, transparent) 0%, transparent 34%, color-mix(in oklab, var(--ink) 52%, transparent) 68%, color-mix(in oklab, var(--ink) 88%, transparent) 100%); }
 @utility intro-grain { opacity:.13; background-image:radial-gradient(circle at 20% 30%,var(--paper) 0 1px,transparent 1px),radial-gradient(circle at 75% 65%,var(--paper) 0 1px,transparent 1px); background-size:7px 7px,11px 11px; }
 @utility intro-story { background: radial-gradient(circle at center,color-mix(in oklab,var(--primary) 18%,var(--foreground)),var(--foreground) 72%); }
 @utility opening-verse { position: relative; }
@@ -280,6 +279,7 @@
   transform-origin: center;
   opacity: 0;
 }
+@utility intro-handoff-copy { opacity: 0; }
 @utility intro-skip { letter-spacing:0; }
 @utility petal {
   position: fixed;
