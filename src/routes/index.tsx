@@ -188,6 +188,7 @@ function WeddingInvitation() {
           <p className="mb-4 text-[10px] uppercase tracking-[.3em] text-primary-foreground/85">03 · 10 · 2026</p>
           <p className="font-display text-[3.6rem] leading-[.9] sm:text-8xl">Thảo My<br/><span className="text-secondary">&</span> Xuân Tú</p>
           <p className="mt-6 font-display text-lg italic leading-[2]">Hai con người,<br/>hai hành trình,<br/>một đích đến.</p>
+          <span className="mt-8 block h-12 w-px opacity-0" />
         </div>
       </>}
     </div>}
